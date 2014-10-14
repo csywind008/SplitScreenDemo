@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "changVIewDemo.h"
-@interface RootViewController : UIViewController<changViewDelegate>
-
+@interface RootViewController : UIViewController<changViewDelegate,UITableViewDataSource,UITableViewDelegate>
+{
+    CGPoint pointbegin ;
+    CGPoint pointmove;
+    UITableView *tableView;
+}
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26D1049D19ECB6B50061387A /* ChangeView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1049C19ECB6B50061387A /* ChangeView1.m */; };
 		26D4819519EB9CC400499318 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4819419EB9CC400499318 /* Foundation.framework */; };
 		26D4819719EB9CC400499318 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4819619EB9CC400499318 /* CoreGraphics.framework */; };
 		26D4819919EB9CC400499318 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4819819EB9CC400499318 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26D1049B19ECB6B50061387A /* ChangeView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeView1.h; sourceTree = "<group>"; };
+		26D1049C19ECB6B50061387A /* ChangeView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeView1.m; sourceTree = "<group>"; };
 		26D4819119EB9CC400499318 /* SplitScreenDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitScreenDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D4819419EB9CC400499318 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26D4819619EB9CC400499318 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				26D481C419EB9EEE00499318 /* RootViewController.m */,
 				26D481C619EBAB6200499318 /* changVIewDemo.h */,
 				26D481C719EBAB6200499318 /* changVIewDemo.m */,
+				26D1049B19ECB6B50061387A /* ChangeView1.h */,
+				26D1049C19ECB6B50061387A /* ChangeView1.m */,
 				26D481A619EB9CC400499318 /* Images.xcassets */,
 				26D4819B19EB9CC400499318 /* Supporting Files */,
 			);
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26D481A519EB9CC400499318 /* AppDelegate.m in Sources */,
+				26D1049D19ECB6B50061387A /* ChangeView1.m in Sources */,
 				26D481A119EB9CC400499318 /* main.m in Sources */,
 				26D481C519EB9EEE00499318 /* RootViewController.m in Sources */,
 				26D481C819EBAB6200499318 /* changVIewDemo.m in Sources */,
@@ -453,6 +459,7 @@
 				26D481BF19EB9CC400499318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26D481C019EB9CC400499318 /* Build configuration list for PBXNativeTarget "SplitScreenDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +468,7 @@
 				26D481C219EB9CC400499318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

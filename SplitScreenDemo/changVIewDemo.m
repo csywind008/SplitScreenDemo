@@ -16,7 +16,7 @@
     _w = 1.0/2;
     _h = 1.0/2;
     myRect = CGRectMake(frame.origin.x, frame.origin.y, 666*_w, 612*_h);
-    self = [super initWithFrame:myRect];
+    self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]init];
@@ -30,24 +30,25 @@
 }
 -(void)handlePanGestureRecognize:(UIPanGestureRecognizer*)pan
 {
+    NSLog(@"handlepan");
+
     UIView *panV = [pan view];
     if(pan.state == UIGestureRecognizerStateBegan||pan.state ==UIGestureRecognizerStateChanged)
     {
         CGPoint P = [pan translationInView:panV.superview];
-        NSLog(@"pan.x:%f,pan.y:%f",P.x,P.y);
         CGPoint pa = CGPointMake(panV.center.x+P.x, panV.center.y+P.y);
-        if (pa.x<self.frame.size.width/3||pa.y<self.frame.size.height/3||pa.x>panV.superview.frame.size.width-self.frame.size.width/3||pa.y>panV.superview.frame.size.height-self.frame.size.height/3) {
-            
-        }else {
+//        if (pa.x<self.frame.size.width/3||pa.y<self.frame.size.height/3||pa.x>panV.superview.frame.size.width-self.frame.size.width/3||pa.y>panV.superview.frame.size.height-self.frame.size.height/3) {
+//            
+//        }else {
             panV.center = CGPointMake(panV.center.x+P.x, panV.center.y+P.y);
             [pan setTranslation:CGPointZero inView:panV.superview];
-        }
+     //   }
         
         
     }
     if(pan.state == UIGestureRecognizerStateEnded)
     {
-        self.hidden = YES;
+        //self.hidden = YES;
     }
 }
 -(void)ViewInit
