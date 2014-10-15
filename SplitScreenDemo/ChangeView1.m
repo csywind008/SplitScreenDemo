@@ -47,6 +47,7 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touchesEnded_chang");
+    self.hidden = YES;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -55,7 +55,7 @@
     tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, cellWidth, Height) style:UITableViewStylePlain];
     tableView.separatorColor = [UIColor grayColor];
     tableView.layer.borderWidth = 3;
-    tableView.layer.borderColor = [UIColor grayColor].CGColor;
+    tableView.layer.borderColor = [UIColor redColor].CGColor;
     tableView.delegate=self;
     tableView.dataSource = self;
     tableView.showsVerticalScrollIndicator = NO;
@@ -71,7 +71,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 7;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -88,9 +88,18 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]init];
     [panGesture addTarget:self action:@selector(handlePanGestureRecognize:)];
-    [cell addGestureRecognizer:panGesture];
+    //[cell addGestureRecognizer:panGesture];
     
     return  cell;
+}
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.view bringSubviewToFront:changview1];
+    changview1.hidden = NO;
 }
 #pragma mark Gesture
 -(void)handlePanGestureRecognize:(UIPanGestureRecognizer *)pan
