@@ -29,6 +29,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake(cellWidth+100, 100, 500, 436)];
+    backView.image = [UIImage imageNamed:@"back.png" ];
+    [self.view addSubview:backView];
+    
+    
     UIView *normalview = [[UIView alloc]initWithFrame:CGRectMake(200, 50, 100, 50)];
     normalview.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:normalview];
@@ -62,6 +67,14 @@
    // tableView.transform = CGAffineTransformMakeRotation(-M_PI_2);
     //tableView.backgroundColor = [UIColor redColor];
     [self.view addSubview:tableView];
+    //通过长按控制
+    UILongPressGestureRecognizer * longPressGr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressToDo:)];
+    longPressGr.minimumPressDuration = 0.3;
+    [tableView addGestureRecognizer:longPressGr];
+    
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]init];
+    [panGesture addTarget:self action:@selector(handlePanGestureRecognize:)];
+    //[tableView addGestureRecognizer:panGesture];
 }
 
 #pragma mark tableviewdelegate
@@ -102,6 +115,30 @@
     changview1.hidden = NO;
 }
 #pragma mark Gesture
+-(void)longPressToDo:(UILongPressGestureRecognizer *)gesture
+{
+    CGPoint point = [gesture locationInView:tableView.superview];
+    changview1.hidden = NO;
+    if(gesture.state == UIGestureRecognizerStateBegan)
+    {
+        CGPoint point1 = [gesture locationInView:tableView];
+        NSIndexPath * indexPath = [tableView indexPathForRowAtPoint:point1];
+       
+        
+        if(indexPath == nil) return ;
+        //add your code here
+        changview1.center = point;
+
+        [self.view bringSubviewToFront:changview1];
+        changview1.backgroundColor = [UIColor colorWithRed:1.0/((indexPath.row+1)%35) green:1.0/((indexPath.row*2)%15) blue:1.0/((indexPath.row+4)%10) alpha:1];
+        NSLog(@"longpress:%f,%f,index:%d,%@",point.x,point.y,indexPath.row,changview1.backgroundColor);
+    }
+    if(gesture.state == UIGestureRecognizerStateChanged)
+    {
+        changview1.center = point;
+        [self.view bringSubviewToFront:changview1];
+    }
+}
 -(void)handlePanGestureRecognize:(UIPanGestureRecognizer *)pan
 {
     UITableViewCell *cell = (UITableViewCell *)[pan view];

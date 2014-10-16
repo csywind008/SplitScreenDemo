@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26C4B44719EF730500112BE7 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C4B44619EF730500112BE7 /* back.png */; };
+		26C4B44B19EF8FC700112BE7 /* UIView+CSYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C4B44A19EF8FC700112BE7 /* UIView+CSYAdditions.m */; };
 		26D1049D19ECB6B50061387A /* ChangeView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D1049C19ECB6B50061387A /* ChangeView1.m */; };
 		26D4819519EB9CC400499318 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4819419EB9CC400499318 /* Foundation.framework */; };
 		26D4819719EB9CC400499318 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D4819619EB9CC400499318 /* CoreGraphics.framework */; };
@@ -22,6 +24,9 @@
 		26D481BA19EB9CC400499318 /* SplitScreenDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D481B919EB9CC400499318 /* SplitScreenDemoTests.m */; };
 		26D481C519EB9EEE00499318 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D481C419EB9EEE00499318 /* RootViewController.m */; };
 		26D481C819EBAB6200499318 /* changVIewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D481C719EBAB6200499318 /* changVIewDemo.m */; };
+		26D4C25B19EE091800C8A797 /* dragViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C25919EE091800C8A797 /* dragViewController.m */; };
+		26D4C25C19EE091800C8A797 /* dragViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D4C25A19EE091800C8A797 /* dragViewController.xib */; };
+		26D4C25F19EE1D7500C8A797 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D4C25E19EE1D7500C8A797 /* MyTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26C4B44619EF730500112BE7 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		26C4B44919EF8FC700112BE7 /* UIView+CSYAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CSYAdditions.h"; sourceTree = "<group>"; };
+		26C4B44A19EF8FC700112BE7 /* UIView+CSYAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CSYAdditions.m"; sourceTree = "<group>"; };
 		26D1049B19ECB6B50061387A /* ChangeView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeView1.h; sourceTree = "<group>"; };
 		26D1049C19ECB6B50061387A /* ChangeView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeView1.m; sourceTree = "<group>"; };
 		26D4819119EB9CC400499318 /* SplitScreenDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitScreenDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +65,11 @@
 		26D481C419EB9EEE00499318 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		26D481C619EBAB6200499318 /* changVIewDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = changVIewDemo.h; sourceTree = "<group>"; };
 		26D481C719EBAB6200499318 /* changVIewDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = changVIewDemo.m; sourceTree = "<group>"; };
+		26D4C25819EE091800C8A797 /* dragViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dragViewController.h; sourceTree = "<group>"; };
+		26D4C25919EE091800C8A797 /* dragViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dragViewController.m; sourceTree = "<group>"; };
+		26D4C25A19EE091800C8A797 /* dragViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dragViewController.xib; sourceTree = "<group>"; };
+		26D4C25D19EE1D7500C8A797 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		26D4C25E19EE1D7500C8A797 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +99,7 @@
 		26D4818819EB9CC400499318 = {
 			isa = PBXGroup;
 			children = (
+				26C4B44619EF730500112BE7 /* back.png */,
 				26D4819A19EB9CC400499318 /* SplitScreenDemo */,
 				26D481B319EB9CC400499318 /* SplitScreenDemoTests */,
 				26D4819319EB9CC400499318 /* Frameworks */,
@@ -124,6 +138,13 @@
 				26D481C719EBAB6200499318 /* changVIewDemo.m */,
 				26D1049B19ECB6B50061387A /* ChangeView1.h */,
 				26D1049C19ECB6B50061387A /* ChangeView1.m */,
+				26D4C25D19EE1D7500C8A797 /* MyTableViewCell.h */,
+				26D4C25E19EE1D7500C8A797 /* MyTableViewCell.m */,
+				26D4C25819EE091800C8A797 /* dragViewController.h */,
+				26D4C25919EE091800C8A797 /* dragViewController.m */,
+				26D4C25A19EE091800C8A797 /* dragViewController.xib */,
+				26C4B44919EF8FC700112BE7 /* UIView+CSYAdditions.h */,
+				26C4B44A19EF8FC700112BE7 /* UIView+CSYAdditions.m */,
 				26D481A619EB9CC400499318 /* Images.xcassets */,
 				26D4819B19EB9CC400499318 /* Supporting Files */,
 			);
@@ -236,6 +257,8 @@
 			files = (
 				26D4819F19EB9CC400499318 /* InfoPlist.strings in Resources */,
 				26D481A719EB9CC400499318 /* Images.xcassets in Resources */,
+				26C4B44719EF730500112BE7 /* back.png in Resources */,
+				26D4C25C19EE091800C8A797 /* dragViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,9 +278,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				26D481A519EB9CC400499318 /* AppDelegate.m in Sources */,
+				26D4C25F19EE1D7500C8A797 /* MyTableViewCell.m in Sources */,
+				26C4B44B19EF8FC700112BE7 /* UIView+CSYAdditions.m in Sources */,
 				26D1049D19ECB6B50061387A /* ChangeView1.m in Sources */,
 				26D481A119EB9CC400499318 /* main.m in Sources */,
 				26D481C519EB9EEE00499318 /* RootViewController.m in Sources */,
+				26D4C25B19EE091800C8A797 /* dragViewController.m in Sources */,
 				26D481C819EBAB6200499318 /* changVIewDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
