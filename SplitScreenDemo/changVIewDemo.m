@@ -33,10 +33,12 @@
     NSLog(@"handlepan");
 
     UIView *panV = [pan view];
+    CGPoint pp = [pan translationInView:self.superview];
     if(pan.state == UIGestureRecognizerStateBegan||pan.state ==UIGestureRecognizerStateChanged)
     {
         CGPoint P = [pan translationInView:panV.superview];
-        CGPoint pa = CGPointMake(panV.center.x+P.x, panV.center.y+P.y);
+        NSLog(@"point:%f,%f",pp.x,pp.y);
+ //       CGPoint pa = CGPointMake(panV.center.x+P.x, panV.center.y+P.y);
 //        if (pa.x<self.frame.size.width/3||pa.y<self.frame.size.height/3||pa.x>panV.superview.frame.size.width-self.frame.size.width/3||pa.y>panV.superview.frame.size.height-self.frame.size.height/3) {
 //            
 //        }else {
@@ -49,6 +51,7 @@
     if(pan.state == UIGestureRecognizerStateEnded)
     {
         //self.hidden = YES;
+
     }
 }
 -(void)ViewInit

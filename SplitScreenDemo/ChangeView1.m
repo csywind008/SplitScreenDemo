@@ -13,43 +13,23 @@
 @synthesize dragEnable;
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
+    CGRect fframe = CGRectMake(frame.origin.x, frame.origin.y, 114, 89);
+    self = [super initWithFrame:fframe];
     if (self) {
         // Initialization code
-        
+        UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(BigorSmall:)];
+        [self addGestureRecognizer:pinchGestureRecognizer];
     }
     return self;
 }
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+-(void)BigorSmall:(UIPinchGestureRecognizer *)pin
 {
-    if(!dragEnable)
+    if(pin.state == UIGestureRecognizerStateBegan)
     {
-        return;
+        NSLog(@"bigorsmall");
     }
-    UITouch *touch = [touches anyObject];
-    beginPoin = [touch locationInView:self];
-    NSLog(@"touchbegan_change");
 }
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    NSLog(@"touchmoved_change");
-    if(!dragEnable)
-    {
-        return;
-    }
-    UITouch *touch = [touches anyObject];
-    CGPoint newPoint = [touch locationInView:self];
-    
-    float offsetX = newPoint.x - beginPoin.x;
-    float offsetY = newPoint.y - beginPoin.y;
-    self.center = CGPointMake(self.center.x+offsetX, self.center.y + offsetY);
-}
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    NSLog(@"touchesEnded_chang");
-    self.hidden = YES;
-}
-/*
+                /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect

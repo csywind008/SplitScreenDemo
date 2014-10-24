@@ -29,8 +29,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake(cellWidth+100, 100, 500, 436)];
-    backView.image = [UIImage imageNamed:@"back.png" ];
+    CGRect bounds = CGRectMake(0, 0, Width, Height);
+
+    UIImageView *backView = [[UIImageView alloc]initWithFrame:bounds];
+    backView.image = [UIImage imageNamed:@"background.jpg" ];
     [self.view addSubview:backView];
     
     
@@ -115,8 +117,10 @@
     changview1.hidden = NO;
 }
 #pragma mark Gesture
+//长按手势
 -(void)longPressToDo:(UILongPressGestureRecognizer *)gesture
 {
+    ChangeView1 *newchangview1;
     CGPoint point = [gesture locationInView:tableView.superview];
     changview1.hidden = NO;
     if(gesture.state == UIGestureRecognizerStateBegan)
@@ -127,15 +131,17 @@
         
         if(indexPath == nil) return ;
         //add your code here
-        changview1.center = point;
+        newchangview1 = [[ChangeView1 alloc]init];
+        newchangview1.center = point;
 
-        [self.view bringSubviewToFront:changview1];
-        changview1.backgroundColor = [UIColor colorWithRed:1.0/((indexPath.row+1)%35) green:1.0/((indexPath.row*2)%15) blue:1.0/((indexPath.row+4)%10) alpha:1];
+        [self.view bringSubviewToFront:newchangview1];
+        newchangview1.backgroundColor = [UIColor colorWithRed:1.0/((indexPath.row+1)%35) green:1.0/((indexPath.row*2)%15) blue:1.0/((indexPath.row+4)%10) alpha:1];
         NSLog(@"longpress:%f,%f,index:%d,%@",point.x,point.y,indexPath.row,changview1.backgroundColor);
+        [self.view addSubview:newchangview1];
     }
     if(gesture.state == UIGestureRecognizerStateChanged)
     {
-        changview1.center = point;
+        newchangview1.center = point;
         [self.view bringSubviewToFront:changview1];
     }
 }
@@ -169,29 +175,29 @@
     }
 }
 #pragma mark touch
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch = [touches anyObject];
-    pointbegin = [touch locationInView:self.view];
-    NSLog(@"begin,touch.x:%f,y:%f",pointbegin.x,pointbegin.y);
-}
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch = [touches anyObject];
-    pointmove = [touch locationInView:self.view];
-    float offsetx = pointmove.x - pointbegin.x;
-    float offsety = pointmove.y - pointbegin.y;
-    if(offsetx != 0||offsety !=0)
-    {
-        changview1.hidden = NO;
-        changview1.center = CGPointMake(pointmove.x, pointmove.y);
-    }
-    NSLog(@"moved");
-}
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    changview1.hidden = YES;
-}
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    UITouch *touch = [touches anyObject];
+//    pointbegin = [touch locationInView:self.view];
+//    NSLog(@"begin,touch.x:%f,y:%f",pointbegin.x,pointbegin.y);
+//}
+//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    UITouch *touch = [touches anyObject];
+//    pointmove = [touch locationInView:self.view];
+//    float offsetx = pointmove.x - pointbegin.x;
+//    float offsety = pointmove.y - pointbegin.y;
+//    if(offsetx != 0||offsety !=0)
+//    {
+//        changview1.hidden = NO;
+//        changview1.center = CGPointMake(pointmove.x, pointmove.y);
+//    }
+//    NSLog(@"moved");
+//}
+//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    changview1.hidden = YES;
+//}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
